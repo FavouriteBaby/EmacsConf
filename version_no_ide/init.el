@@ -20,16 +20,24 @@
   (require 'setup-helm))
 
 (custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(column-number-mode 1)
+ '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (auctex sr-speedbar monokai-theme helm volatile-highlights use-package undo-tree counsel-projectile company))))
+    (auctex sr-speedbar monokai-theme helm volatile-highlights use-package undo-tree counsel-projectile company)))
+ '(show-paren-mode t)
+ '(tool-bar-mode nil))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "微软雅黑" :foundry "outline" :slant normal :weight normal :height 98 :width normal)))))
+ '(default ((t (:family "微软雅黑" :foundry "outline" :slant normal :weight normal :height 100 :width normal)))))
 
 (defun open-init-file ()
   (interactive)
@@ -47,9 +55,20 @@
 (setq electric-pair-pairs '(
 			    (?\{ . ?\})
 			    (?\' . ?\')
+                	    (?\" . ?\")
 			    ))
 
 (electric-pair-mode t)
+
+;; 设置utf-8
+(set-buffer-file-coding-system 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(set-selection-coding-system 'utf-8)
+(set-default-coding-systems 'utf-8)
+(set-clipboard-coding-system 'utf-8)
+(setq default-buffer-file-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
 
 ;; Latex Configuration(CTex)
 (require 'tex-mik)
